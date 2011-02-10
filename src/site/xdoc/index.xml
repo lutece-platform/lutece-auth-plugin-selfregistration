@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Plugin Self Registration : Introduction</title>
+	</properties>
+	<body>
+		<section name="plugin-selfregistration">
+			<p>
+				LDAP server is interface with plugin-selfregistration.
+			</p>
+			<subsection name="Introduction">
+				<p>
+					plugin-selfregistration registers and modifies an LDAP directory.
+				</p>
+			</subsection>
+		</section>
+	</body>
+</document>

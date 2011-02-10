@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Plugin Self Registration : Configuration</title>
+	</properties>
+	<body>
+		<section name="Installation">
+			<p>
+				Il existe plusieurs possibilités d'installation en
+				fonction de la distribution employée :
+			</p>
+			<ul>
+				<li>
+					Distribution binaire : Le contenu du fichier
+					<code>zip</code>
+					de la distribution binaire doit être décompressé
+					dans une webapp contenant déjà le coeur de lutèce.
+				</li>
+				<li>
+					Sources : Dans ce cas il est nécessaire d'ajouter
+					les dépendances au coeur 
+					afin de compiler les sources et de se retrouver avec
+					une distribution binaire.
+				</li>
+			</ul>
+			<p>
+				<strong>Remarque :</strong>
+				<br />
+				Il est possible d'obtenir un fichier
+				<code>war</code>
+				déployable en utilisant un packaging de type
+				<code>lutece-site.</code>
+				Ce fichier doit être placé dans le répertoire
+				<code>webapps</code>
+				de votre installation de Tomcat. Il sera automatiquement
+				déployé lors du lancement du serveur.
+			</p>
+			<br />
+		</section>
+		<section name="Configuration">
+			<subsection name="Mode Portail">
+				<p>
+					La configuration correspond à la configuration
+					classique d'un portail Lutèce.
+				</p>
+			</subsection>
+			<subsection name="Mode Standalone">
+				<p>
+					Ce module peut fonctionner en mode Standalone, pour
+					ce faire, il est nécessaire de commenter la
+					déclaration du pool portal dans le fichier
+					<code>db.properties.</code>
+					De plus, il est nécessaire d'activer le plugin
+					manuellement, en ajoutant la ligne suivante dans le
+					fichier
+					<code>plugins.dat</code>
+					:
+					<br />
+					<code>selfregistration.installed=1</code>
+				</p>
+			</subsection>
+			<subsection name="selfregistration.properties">
+				<p>
+					Le fonctionnement du plugin Self Registration
+					peut être reconfiguré en modifiant ce fichier.
+				</p>
+				<p>
+					On pourra notament personnaliser, l'url de redirection depuis
+					le dernier écran du formulaire, la taille des listes déroulantes
+					Les pattern de validation de certain champs, le message d'erreur lors de la connexion avec l'annuaire ...
+				</p>
+				
+				<table>
+					<tr>
+						<th>Propriété</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>selfregistration.civility.items.numbers</td>
+						<td>
+							Nombre de choix dans la liste déroulante du champ "Civilité".
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.streetNumberSuffix.items.numbers</td>
+						<td>
+							Nombre de choix dans la liste déroulante du champ "Numéro de la voie (Suffixe)".
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.streetType.items.numbers</td>
+						<td>
+							Nombre de choix dans la liste déroulante du champ "Type de la voie".
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.districtNumber.items.numbers</td>
+						<td>
+							Nombre de choix dans la liste déroulante du champ "Arrondissement".
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.url.default.redirect</td>
+						<td>
+							Url de redirection, après l'écran de confirmation d'un enregistrement ou d'une modification.
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.phoneNumber.pattern</td>
+						<td>
+							Expréssion régulière de validation du champ "Numéro de téléphone".
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.portalCode.pattern</td>
+						<td>
+							Expréssion régulière de validation du champ "Code postal".
+						</td>
+					</tr>
+					<tr>
+						<td>selfregistration.streetNumber.pattern</td>
+						<td>
+							Expréssion régulière de validation du champ "Numéro de la voie (Numéro)".
+						</td>
+					</tr>
+					<tr>
+						<td>elfregistration.message.ldap.error</td>
+						<td>
+							Libéllé du message d'erreur lors d'une erreur de communication avec l'annuaire Ldap.
+						</td>
+					</tr>
+				</table>
+			</subsection>
+			<subsection name="selfregistration_context.xml">
+				<p>
+					Le fonctionnement du plugin Self Registration
+					peut être reconfiguré en modifiant ce fichier.
+				</p>
+				<p>
+					On pourra configurer les informations nécéssairent pour la connexion à l'annuaire Ldap.
+				</p>
+				<source>
+
+&lt;beans&gt;
+  
+  &lt;bean id="selfregistrationLdapUserDAO"  class="fr.paris.lutece.plugins.selfregistration.business.LdapUserDAO"&gt;
+  	 &lt;property name="contextFactory" value="com.sun.jndi.ldap.LdapCtxFactory"/&gt;
+  	 &lt;property name="providerUrl" value=""/&gt;
+  	 &lt;property name="ou" value=""/&gt;
+  	 &lt;property name="securityAuthentication" value="simple"/&gt;
+  	 &lt;property name="login" value=""/&gt;
+  	 &lt;property name="password" value=""/&gt;
+  	 &lt;property name="poolMaxSize" value="10"/&gt;
+  	 &lt;property name="poolPrefSize" value="50"/&gt;
+  	 &lt;property name="poolTimeout" value="10000"/&gt;
+	 &lt;property name="ldapAttributes"&gt;
+	    &lt;props&gt;
+	        &lt;prop key="ldap.attribute.uid"&gt;uid&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.cn"&gt;cn&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.objectClass"&gt;objectClass&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.objectClass.person"&gt;person&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.objectClass.top"&gt;top&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.objectClass.orgPerson"&gt;organizationalPerson&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.objectClass.inetOrgPerson"&gt;inetOrgPerson&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.objectClass.parisPerson"&gt;parisPerson&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.civility"&gt;title&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.lastName"&gt;sn&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.givenName"&gt;givenName&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.mail"&gt;mail&lt;/prop&gt;
+		    &lt;prop key="ldap.attribute.userPassword"&gt;userPassword&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.phoneNumber"&gt;telephoneNumber&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.streetNumber"&gt;streetNumber&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.streetNumberSuffix"&gt;streetNumberSuffix&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.streetType"&gt;streetType&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.streetName"&gt;street&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.districtNumber"&gt;districtNumber&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.postalCode"&gt;postalCode&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.stateProv"&gt;st&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.city"&gt;l&lt;/prop&gt;
+			&lt;prop key="ldap.attribute.country"&gt;co&lt;/prop&gt;
+	    &lt;/props&gt;
+	 &lt;/property&gt;
+  &lt;/bean&gt;
+
+&lt;/beans&gt;
+				</source>
+				
+				
+				<p>
+					Description des propriétés :
+				</p>
+			
+				<table>
+					<tr>
+						<th>Propriété</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>contextFactory</td>
+						<td>
+							Classe utilisé pour la construction du contexte Ldap.
+							(toujours la valeur "com.sun.jndi.ldap.LdapCtxFactory" pour la connexion à un annuaire Ldap).
+						</td>
+					</tr>
+					<tr>
+						<td>providerUrl</td>
+						<td>
+							Url de l'annuaire Ldap.
+						</td>
+					</tr>
+					<tr>
+						<td>ou</td>
+						<td>
+							Derniers noeud du DN (Valeur : "Utilisateurs").
+						</td>
+					</tr>
+					<tr>
+						<td>securityAuthentication</td>
+						<td>
+							Type de l'authentification (Valeur : "Simple". Login/Mot de passe).
+						</td>
+					</tr>
+					<tr>
+						<td>login</td>
+						<td>
+							Utilisateurs DN de l'annuaire Ldap.
+						</td>
+					</tr>
+					<tr>
+						<td>password</td>
+						<td>
+							Mot de passe de l'utilisateur DN.
+						</td>
+					</tr>
+					<tr>
+						<td>poolMaxSize</td>
+						<td>
+							Nombre maximum de connexions par connexion identité qui peuvent être maintenues en même temps.
+						</td>
+					</tr>
+					<tr>
+						<td>poolPrefSize</td>
+						<td>
+							le meilleur nombre de connexions par connexion identité qui doit être simultanément maintenu.
+						</td>
+					</tr>
+					<tr>
+						<td>poolTimeout</td>
+						<td>
+							nombre de millisecondes après les quelles une connexion inactive et déconnectée du pool Ldap.
+						</td>
+					</tr>
+					<tr>
+						<td>ldapAttributes</td>
+						<td>
+							Liste des attributs de l'annuaire Ldap utilisés par le plugin.
+						</td>
+					</tr>
+				</table>
+			</subsection>
+		</section>
+	
+	</body>
+</document>

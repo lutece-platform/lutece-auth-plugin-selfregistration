@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+	<properties>
+		<title>Plugin Self Registration : Download</title>
+	</properties>
+	<body>
+		<section name="Téléchargement">
+			<p>
+				Vous pouvez télécharger les sources plugin Self Registration via le repositorie Subversion (Cf. page "Project Information/Source Repository").
+			</p>
+		</section>
+	</body>
+</document>

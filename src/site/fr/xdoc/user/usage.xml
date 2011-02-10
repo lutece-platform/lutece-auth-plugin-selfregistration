@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Plugin Self Registration : Utilisation</title>
+	</properties>
+	<body>
+		<section name="Utilisation">
+			<p>
+				Une fois installé et déployé sur une application web, la
+				première étape consiste à activer le plugin dans
+				l'interface d'administration de Lutèce, rubrique Gestion des
+				plugins.
+			</p>
+			<p>
+				Le formulaire généré par le plugin Self Registration est
+				accessible via la XPage du plugin :
+			</p>
+			<ul>
+				<li>
+					<p>
+						L'url suivant permet d'acceder au formulaire d'enregistrement :
+					</p>
+					<p>
+						<code>
+							http://&lt;base_url&gt;/jsp/site/Portal.jsp?page=selfregistration
+						</code>
+					</p>
+				</li>
+				<li>
+					<p>
+						L'url suivant permet d'acceder au formulaire de modification :
+					</p>
+					
+					<p>
+						<code>
+							http://&lt;base_url&gt;/jsp/site/Portal.jsp?page=selfregistration&amp;action=modification
+						</code>
+					</p>
+					<p>
+						<strong>Attention</strong> : Pour pouvoir accéder à ce formulaire il faut au préalable s'authentifier !!
+					</p>
+				</li>
+			<li>
+			<p>
+				<p>
+				Dans le cas d'une utilisation du module en mode
+				<strong>standalone</strong>, l'url de base :
+				</p>
+				<p>
+				<code>
+					http://&lt;base_url&gt;/jsp/site/<strong>Portal.jsp</strong>
+				</code>
+				</p>
+				<p>
+				est à remplacer par l'url suivante :
+				</p>
+				<p>
+				<code>
+					http://&lt;base_url&gt;/jsp/site/<strong>RunStandaloneApp.jsp</strong>
+				</code>
+				</p>
+			</p>
+			</li>
+			</ul>
+		</section>
+	</body>
+</document>

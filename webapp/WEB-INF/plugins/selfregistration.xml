@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<plug-in>
+    <name>selfregistration</name>
+    <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
+    <version>2.0.1</version>
+    <description>selfregistration.plugin.description</description>
+    <documentation></documentation>
+    <installation></installation>
+    <changes></changes>
+    <user-guide></user-guide>
+    <provider>selfregistration.plugin.provider</provider>
+    <provider-url>http://lutece.paris.fr</provider-url>
+    <icon-url>images/admin/skin/plugins/selfregistration/selfregistration.png</icon-url>
+    <copyright>Copyright 2001-2008 Mairie de Paris</copyright>
+    <db-pool-required>0</db-pool-required>
+    
+    <!-- Applications -->
+    <applications>
+        <application>
+            <application-id>selfregistration</application-id>
+            <application-class>fr.paris.lutece.plugins.selfregistration.web.SelfRegistrationApp</application-class>
+        </application>
+    </applications>
+</plug-in>

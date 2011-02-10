@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  
+  <bean id="selfregistrationLdapUserDAO"  class="fr.paris.lutece.plugins.selfregistration.business.LdapUserDAO">
+  	 <property name="contextFactory" value="com.sun.jndi.ldap.LdapCtxFactory"/>
+  	 <property name="providerUrl" value=""/>
+  	 <property name="ou" value="ou=Utilisateurs"/>
+  	 <property name="securityAuthentication" value="simple"/>
+  	 <property name="login" value=""/>
+  	 <property name="password" value=""/>
+  	 <property name="poolMaxSize" value="10"/>
+  	 <property name="poolPrefSize" value="50"/>
+  	 <property name="poolTimeout" value="1000"/>
+	 <property name="ldapAttributes">
+	    <props>
+	        <prop key="ldap.attribute.uid">uid</prop>
+		    <prop key="ldap.attribute.cn">cn</prop>
+		    <prop key="ldap.attribute.objectClass">objectClass</prop>
+		    <prop key="ldap.attribute.objectClass.person">person</prop>
+		    <prop key="ldap.attribute.objectClass.top">top</prop>
+		    <prop key="ldap.attribute.objectClass.orgPerson">organizationalPerson</prop>
+		    <prop key="ldap.attribute.objectClass.inetOrgPerson">inetOrgPerson</prop>
+		    <prop key="ldap.attribute.objectClass.parisPerson">parisPerson</prop>
+		    <prop key="ldap.attribute.civility">title</prop>
+		    <prop key="ldap.attribute.lastName">sn</prop>
+		    <prop key="ldap.attribute.givenName">givenName</prop>
+		    <prop key="ldap.attribute.mail">mail</prop>
+		    <prop key="ldap.attribute.userPassword">userPassword</prop>
+			<prop key="ldap.attribute.phoneNumber">telephoneNumber</prop>
+			<prop key="ldap.attribute.streetNumber">streetNumber</prop>
+			<prop key="ldap.attribute.streetNumberSuffix">streetNumberSuffix</prop>
+			<prop key="ldap.attribute.streetType">streetType</prop>
+			<prop key="ldap.attribute.streetName">street</prop>
+			<prop key="ldap.attribute.districtNumber">districtNumber</prop>
+			<prop key="ldap.attribute.postalCode">postalCode</prop>
+			<prop key="ldap.attribute.stateProv">st</prop>
+			<prop key="ldap.attribute.city">l</prop>
+			<prop key="ldap.attribute.country">co</prop>
+	    </props>
+	 </property>
+  </bean>
+
+</beans>
