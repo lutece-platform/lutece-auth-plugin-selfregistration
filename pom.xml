@@ -34,6 +34,7 @@
 	<properties>
 		<componentName>selfregistration</componentName>
 		<jiraProjectName>PLUGINSELFREGISTRATION</jiraProjectName>
+		<jiraComponentId>10392</jiraComponentId>
 	</properties>
     <scm>
         <connection>scm:svn:http://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/authentication/plugin-selfregistration</connection>
