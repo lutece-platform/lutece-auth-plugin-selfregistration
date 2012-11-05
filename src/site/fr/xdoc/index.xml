@@ -16,52 +16,50 @@
 					Le plugin Self Registration permet de s'enregistrer et de modifier ses informations dans un annuaire Ldap.
 				</p>
 			</subsection>
-			<subsection name="Fonctionnalités">
-				<subsection name="Formulaire d'enregistrement">
-				<p>
-					La saisie du formulaire d'enregistrement s'effectue en une seul étape :
-				</p>
-				<ul>
-					<li>
-						L'utilisateur renseigne les champs obligatoires et les champs non obligatoires qu'il souhaite.
-					</li>
-				</ul>
-				<br />
-				<p>
-					La validation du formulaire entraine la
-					création d'un utilisateur dans l'annuaire.
-				</p>
-				<br />
-				<p>
-					<strong>Remarque</strong> : Lors de la saisie des infomations,
-					l'utilisateur a l'obligation de fournir un courriel.
-					Ce courriel sera aussi le login de l'utilisateur et sera donc unique dans l'annuaire.
-				</p>
-				</subsection>
-				<subsection name="Formulaire de modification">
-				<p>
-					<strong>Prés-requis</strong> : L'utilisateur doit être authentifié et enregistré dans l'annuaire, 
-					pour pouvoir accéder au formulaires de modification.
-				</p>
-				<p>
-					La saisie du formulaire de modification s'effectue en une seul étape :
-				</p>
-				<ul>
-					<li>
-						L'utilisateur modifie les champs qu'il souhaite.
-					</li>
-				</ul>
-				<br />
-				<p>
-					La validation du formulaire entraine la
-					modification de utilisateur connecté dans l'annuaire.
-				</p>
-				<br />
-				<p>
-					<strong>Remarque</strong> : Lors de la modification des infomations,
-					il n'est pas possible de modifier le courriel.
-				</p>
-				</subsection>
+			<subsection name="Formulaire d'enregistrement">
+			<p>
+				La saisie du formulaire d'enregistrement s'effectue en une seul étape :
+			</p>
+			<ul>
+				<li>
+					L'utilisateur renseigne les champs obligatoires et les champs non obligatoires qu'il souhaite.
+				</li>
+			</ul>
+			<br />
+			<p>
+				La validation du formulaire entraine la
+				création d'un utilisateur dans l'annuaire.
+			</p>
+			<br />
+			<p>
+				<strong>Remarque</strong> : Lors de la saisie des infomations,
+				l'utilisateur a l'obligation de fournir un courriel.
+				Ce courriel sera aussi le login de l'utilisateur et sera donc unique dans l'annuaire.
+			</p>
+			</subsection>
+			<subsection name="Formulaire de modification">
+			<p>
+				<strong>Prés-requis</strong> : L'utilisateur doit être authentifié et enregistré dans l'annuaire, 
+				pour pouvoir accéder au formulaires de modification.
+			</p>
+			<p>
+				La saisie du formulaire de modification s'effectue en une seul étape :
+			</p>
+			<ul>
+				<li>
+					L'utilisateur modifie les champs qu'il souhaite.
+				</li>
+			</ul>
+			<br />
+			<p>
+				La validation du formulaire entraine la
+				modification de utilisateur connecté dans l'annuaire.
+			</p>
+			<br />
+			<p>
+				<strong>Remarque</strong> : Lors de la modification des infomations,
+				il n'est pas possible de modifier le courriel.
+			</p>
 			</subsection>
 			<subsection name="Captcha">
 				<p>
