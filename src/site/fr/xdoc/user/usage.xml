@@ -42,7 +42,6 @@
 					</p>
 				</li>
 			<li>
-			<p>
 				<p>
 				Dans le cas d'une utilisation du module en mode
 				<strong>standalone</strong>, l'url de base :
@@ -60,7 +59,6 @@
 					http://&lt;base_url&gt;/jsp/site/<strong>RunStandaloneApp.jsp</strong>
 				</code>
 				</p>
-			</p>
 			</li>
 			</ul>
 		</section>
